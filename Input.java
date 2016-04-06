@@ -14,14 +14,18 @@ public class Input {
         Scanner s = new Scanner(System.in);	//Scanner to get input
         
         while(size != 0){
-        //Gets input from user
-        System.out.println("Enter board size, enter 0 to exit: ");
-        size = s.nextInt();
-        System.out.println("Enter the beginning square (1 to " + (size*size) + "): ");
-        start = s.nextInt();
-        
-        //Creates new board
-        Board b = new Board(size);
+        	//Gets input from user
+	        System.out.print("Enter board size (5 for 5x5), enter 0 to exit: ");
+	        size = s.nextInt();
+	        if (size != 0){
+	        	System.out.print("Enter the beginning square (1 to " + (size*size) + "): ");
+	        	start = s.nextInt();
+	        
+	        	//Creates new board
+	        	Board b = new Board(size);
+	        	b.findPath(start);
+	        } 
         }
+        System.out.println("Good bye");
     }
 }
